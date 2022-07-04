@@ -770,8 +770,9 @@ class CommandTree(Generic[ClientT]):
 
             for key in remove:
                 del mapping[key]
-
-    async def on_error(self, interaction: Interaction, error: AppCommandError) -> None:
+    
+    @staticmethod
+    async def on_error(interaction: Interaction, error: AppCommandError) -> None:
         """|coro|
 
         A callback that is called when any command raises an :exc:`AppCommandError`.
